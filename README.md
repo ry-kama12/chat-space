@@ -27,32 +27,27 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 |mail _address|string|null:false, unique: true|
 
 ### Association
 has_many :messages
-has_many :groups, through: :groups_users
+has_many :group, through: :groups_users
 
-## groupsテーブル
+## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
 has_many :user, through: :groups_users
-has_many :messages
+has_many :message
 
-## messagesテーブル
+## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false, foreign_key |
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |image|string| |
@@ -70,5 +65,5 @@ belongs_to :group
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belomgs_to :group
+- belongs_to :group
 - belongs_to :user
