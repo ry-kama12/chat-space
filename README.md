@@ -33,6 +33,7 @@ Things you may want to cover:
 ### Association
 has_many :messages
 has_many :groups, through: :groups_users
+has_many :groups_users
 
 ## groupテーブル
 
@@ -43,6 +44,7 @@ has_many :groups, through: :groups_users
 ### Association
 has_many :users, through: :groups_users
 has_many :messages
+has_many :groups_users
 
 ## messageテーブル
 
@@ -51,7 +53,7 @@ has_many :messages
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |image|string| |
-|body|text|null: false |
+|body|text|
 
 ### Association
 belongs_to :user
