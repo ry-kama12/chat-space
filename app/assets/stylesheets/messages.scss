@@ -1,0 +1,115 @@
+.chat{
+  width: calc(100% - 300px);
+  float: left;
+
+    .header{
+      box-sizing: border-box;
+      height: 100px;
+      padding: 0 40px;
+
+      .left-header{
+        font-size: 20px;
+        color: #333333;
+        float: left;
+        margin-top: 35px;
+  
+        .all-name{
+          font-size: 12px;
+          color: #999999;
+          margin-top: 15px;
+          display: inline;
+        } 
+        .menber{
+          font-size: 12px;
+          color: #999999;
+          list-style: none;
+          display: inline;
+        }
+      }
+    .right-header{
+      height: 40px;
+      line-height: 40px;
+      float: right;
+      color: #38aef0;
+      padding: 0 20px;
+      margin-top: 28px;
+      border: solid 1px $light_blue;
+     }
+   }
+ }
+
+  .contents{
+    box-sizing: border-box;
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 46px 40px ;
+
+    .top-info{
+      margin-bottom: 10px;
+      .sent-message{
+        display: flex; 
+        .sent-name{
+          font-size: 16px;
+          font-weight: bold;
+          color: $message_black;
+          padding-right: 10px;
+        }
+
+        .message-day{
+          font-size: 12px;
+          color: #999999;
+         }
+      }
+    }
+    .detail-message{
+      margin-top: 10px;
+        .content{
+          font-size: 12px;
+          color: $message_black;
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+  .form{
+    height: 90px;
+    background-color: #dddddd;
+    padding: 20px 40px;
+
+    .message-form{
+      .form__mask{
+        position: relative;
+        width: calc(100% - 115px);
+        float: left;
+        margin-right: 15px;
+
+        .new-form{
+          height: 50px;  
+          width: calc( 100% - 15px);
+          padding: 0 0 0 10px;
+          color: $message_black;
+        }
+
+        .icon__image{
+          position: absolute;
+          top: 10px; 
+          right: 10px;
+          font-size: 20px;
+          }
+        .select{
+        display: none;
+         }
+       }
+      
+    .form__submit{
+        float: left;
+        height: 50px;
+        width: 100px;
+        line-height: 50px;
+        background-color: $light_blue;
+        border: solid 1px $light_blue;
+        color: #fafafa;
+        padding: 0 30px;
+      }
+    }
+  }
