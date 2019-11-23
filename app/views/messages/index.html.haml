@@ -1,0 +1,55 @@
+.wrapper
+  = render partial: "groups/side_bar"
+
+  .chat 
+    .header
+      .left__header
+        .left-header__title
+          グループ名
+        %ul.all__name
+          Member:
+        %li.menber
+          name
+        %li.menber
+          name
+      .right__header 
+        edit
+
+    .contents
+      .top__info
+        .sent__message
+          .sent__name
+            name
+          .message__day
+            2019/11/09
+      .detail__message
+        .content
+          メッセージ
+
+      .top__info
+        .sent__message
+          .sent__name
+            name
+          .message__day
+            2019/11/10
+      .detail__message
+        .content
+          わからない
+
+      .top__info
+        .sent__message
+          .sent__name
+            name
+          .messageday
+            2019/11/10
+      .detail__message
+        .content
+          わからない
+    .form
+      %form.message__form
+        .form__mask
+          %input.new__form{:name => "form", :placeholder => "type a message", :type => "text"}
+          %label.icon__image
+            = icon('far', 'image', class: 'icon')
+            %input.select{type:  "file", id: "icon__image"}
+        %input.form__submit{type: "submit", value: "send"}

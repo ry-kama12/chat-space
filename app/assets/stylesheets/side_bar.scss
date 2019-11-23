@@ -1,0 +1,65 @@
+.side-bar{
+  box-sizing: border-box;
+  width: 300px;
+  background-color: #253141;
+  float: left;
+  border: #eeeeee;
+  
+  .header{
+      height: 100px;
+      padding: 0 20px;
+
+      .side__bar__menu{
+        line-height: 100px;
+
+       .header__name{
+         box-sizing: border-box;
+         font: 16px;
+         font-weight: bold;
+         color: $white;
+         float: left;
+         }
+        .edit__buttonm{
+          display: flex;
+          float: right;
+
+          .list{
+            text-decoration: none;
+            font-weight: bold;
+            
+            .icon{
+              text-decoration: none;
+              color: $white;
+              margin-left: 5px;
+              }
+             }
+            }
+           }
+          }
+             
+     
+
+  .groups{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 0 20px;
+    .group{
+      &__name{
+        font-size: 15px;
+        font-weight: bold;
+        color: $white;
+        padding-top: 20px;
+        margin-bottom: 5px;
+
+      }
+      &__message{
+        font-size: 11px;
+        font-weight: bold;
+        color: $white;
+        padding-bottom: 40px;
+
+      }
+    }
+  }
+}
+
