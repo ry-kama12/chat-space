@@ -3,53 +3,53 @@
 
   .chat 
     .header
-      .left-header
+      .left__header
         .left-header__title
           グループ名
-        %ul.all-name
+        %ul.all__name
           Member:
         %li.menber
           name
         %li.menber
           name
-      .right-header 
+      .right__header 
         edit
 
     .contents
-      .top-info
-        .sent-message
-          .sent-name
+      .top__info
+        .sent__message
+          .sent__name
             name
-          .message-day
+          .message__day
             2019/11/09
-      .detail-message
+      .detail__message
         .content
           メッセージ
 
-      .top-info
-        .sent-message
-          .sent-name
+      .top__info
+        .sent__message
+          .sent__name
             name
-          .message-day
+          .message__day
             2019/11/10
-      .detail-message
+      .detail__message
         .content
           わからない
 
-      .top-info
-        .sent-message
-          .sent-name
+      .top__info
+        .sent__message
+          .sent__name
             name
-          .message-day
+          .messageday
             2019/11/10
-      .detail-message
+      .detail__message
         .content
           わからない
     .form
-      %form.message-form
+      %form.message__form
         .form__mask
-          %input.new-form{:name => "form", :placeholder => "type a message", :type => "text"}
+          %input.new__form{:name => "form", :placeholder => "type a message", :type => "text"}
           %label.icon__image
-            = fa_icon'image'
+            = icon('far', 'image')
             %input.select{type:  "file", id: "icon__image"}
         %input.form__submit{type: "submit", value: "send"}
