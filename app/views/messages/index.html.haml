@@ -50,6 +50,6 @@
         .form__mask
           %input.new__form{:name => "form", :placeholder => "type a message", :type => "text"}
           %label.icon__image
-            = icon('far', 'image')
+            = icon('far', 'image', class: 'icon')
             %input.select{type:  "file", id: "icon__image"}
         %input.form__submit{type: "submit", value: "send"}
