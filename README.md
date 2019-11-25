@@ -28,7 +28,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|mail _address|string|null:false, unique: true|
+|mail_address|string|null:false, unique: true|
 
 ### Association
 has_many :messages
