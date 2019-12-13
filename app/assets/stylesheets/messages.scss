@@ -76,43 +76,46 @@
     background-color: #dddddd;
     padding: 20px 40px;
     box-sizing: border-box;
+ 
+    .new__form{
+      position: relative;
+      height: 50px;  
+      width: calc( 100% - 165px);
+      padding: 0 0 0 10px;
+      color: $message_black;
+      float: left;
+      border: none;
+      }
 
-    .message__form{
-      .form__mask{
-        position: relative;
-        width: calc(100% - 115px);
-        float: left;
-        margin-right: 15px;
+    .form__mask{
+      .icon__image{
+        position: absolute;
+        width: 40px;
+        background-color: #fafafa
+      }
 
-        .new__form{
-          height: 50px;  
-          width: calc( 100% - 15px);
-          padding: 0 0 0 10px;
-          color: $message_black;
+      .icon{
+        display: inline-block;
+        line-height: 50px;
+        right: 10px;
+        font-size: 25px;
         }
 
-        .icon{
-          position: absolute;
-          display: inline-block;
-          line-height: 50px;
-          right: 10px;
-          font-size: 20px;
-          }
-
-        .select{
+      .hidden{
         display: none;
-         }
+        }
        }
       
     .form__submit{
-        float: left;
-        height: 50px;
-        width: 100px;
-        line-height: 50px;
-        background-color: $light_blue;
-        border: solid 1px $light_blue;
-        color: #fafafa;
-        padding: 0 30px;
+      height: 50px;
+      width: 100px;
+      line-height: 50px;
+      background-color: $light_blue;
+      border: solid 1px $light_blue;
+      color: #fafafa;
+      padding: 0 30px;
+      float: left;
+      margin-left: 55px;
       }
     }
-  }
+  

@@ -1,0 +1,36 @@
+.chat 
+  .header
+    .left__header
+      .left-header__title
+        = @group.name
+      %ul.all__name
+        name
+      %li.menber
+        = current_user.name
+        
+    .right__header 
+      = link_to edit_group_path(current_user) do
+        edit
+
+  .contents
+    = render @messages
+    -# .top__info
+    -#   .sent__message
+    -#     .sent__name
+    -#       = message.user.name
+    -#     .message__day
+    -#       = message.created_at.strftime("%Y/%m/%d %H:%M")
+    -# .detail__message
+    -#   - if message.body.present?
+    -#     .content
+    -#       = message.body
+    -#   = image_tag message.image.url, class: 'content' if message.image.present?
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'new__form', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'icon__image' do
+          = icon('far', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
