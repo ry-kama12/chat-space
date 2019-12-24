@@ -7,5 +7,6 @@
 .detail__message
   - if message.body.present?
     .content
-      = message.body
+      .message{data: {message: {id: message.id}}}
+        = message.body
   = image_tag message.image.url, class: 'content' if message.image.present?
