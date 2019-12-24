@@ -6,10 +6,11 @@
       %ul.all__name
         name
       %li.menber
-        = current_user.name
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
         
     .right__header 
-      = link_to edit_group_path(current_user) do
+      = link_to edit_group_path(@group.id) do
         edit
 
   .contents
