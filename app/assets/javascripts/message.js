@@ -74,7 +74,7 @@ $(function(){
     if (document.location.href.match(/\/groups\/\d+\/messages/)) {
 
     last_message_id = $('.detail__message .content .message:last').data("message-id");
-    // console.log(last_message_id)
+
     $.ajax({
       url: "api/messages",  
       type: 'GET',  
@@ -94,7 +94,7 @@ $(function(){
     }
   })
     .fail(function() {
-      console.log('error');
+      alert('error');
      });
     }
   };
