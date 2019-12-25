@@ -29,14 +29,10 @@ $(function(){
     $(".js-add-user").append(html)
   }
 
-  function member(name, id){
+  function member(id){
     var html = `
-      <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-      <input name='group[user_ids][]' type='hidden' value='${id}'>
-       <p class='chat-group-user__name'>${name}</p>`
-       $(".js-add-user").append(html)
-       console.log(this)
-
+    <input value="${id}" name="group[user_ids][]" type="hidden" id="group_user_ids_${id}" />`;
+       $(`#{id}`).append(html)
   }
 
   $("#user-search-field").on("keyup", function(){
