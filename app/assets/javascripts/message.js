@@ -1,7 +1,6 @@
 $(function(){
   
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
       
       var html =     
@@ -17,8 +16,9 @@ $(function(){
         </div>
       <div class="detail__message">
         <div class="content">
-         ${message.body} 
-         <img src="${message.image}" >
+         <div class='message' data-message-id=${message.id}>
+          ${message.body} 
+           <img src="${message.image}" >
          </div>
       </div>`
 
@@ -37,19 +37,21 @@ $(function(){
         </div>
       <div class="detail__message">
         <div class="content">
-          ${message.body} 
+          <div class='message' data-message-id=${message.id}>
+            ${message.body} 
         </div>
       </div>`
     }
         return html
   }
+  
   $('#new_message').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
-      url: url,  //同期通信でいう『パス』
-      type: 'POST',  //同期通信でいう『HTTPメソッド』
+      url: url,  
+      type: 'POST',  
       data: formData,  
       dataType: 'json',
       processData: false,
@@ -67,5 +69,34 @@ $(function(){
     .fail(function() {
       alert("メッセージ送信に失敗しました");
   });
+});
+  var reloadMessages = function() {
+    if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+
+    last_message_id = $('.detail__message .content .message:last').data("message-id");
+
+    $.ajax({
+      url: "api/messages",  
+      type: 'GET',  
+      data: {id: last_message_id},  
+      dataType: 'json',
+    })
+    .done(function(messages){
+      if (messages.length !== 0) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.contents').append(insertHTML);
+      $('.contents').animate({ scrollTop: $('.contents')[0].scrollHeight});
+      $("form")[0].reset();
+      $('.form__submit').prop('disabled', false);
+    }
   })
+    .fail(function() {
+      alert('error');
+     });
+    }
+  };
+    setInterval(reloadMessages, 7000);
 })
